@@ -1,4 +1,4 @@
-package com.company;
+package pl.wsb;
 
 public class Main {
 
