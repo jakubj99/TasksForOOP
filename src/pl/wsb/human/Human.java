@@ -11,7 +11,7 @@ public class Human {
     String lastName;
     double weight;
     Animal pet;
-    Car vehicle;
+    private Car vehicle;
     private double salary;
     private static String PASS = "mypass";
 
@@ -40,4 +40,17 @@ public class Human {
             System.out.println("Salary has not been changed.");
     }
 
+    public Car getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Car vehicle) {
+        if (salary > getVehicle().price){
+            System.out.println("congratz you can buy this car");
+        }else if (salary > (getVehicle().price / 12)){
+            System.out.println("you can lease this car");
+        }else{
+            System.out.println("go to college and find new work or ask to the rise");
+        }
+    }
 }

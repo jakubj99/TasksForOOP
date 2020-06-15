@@ -5,7 +5,7 @@ public class Car {
     String producer, model;
     Double engineCapacity;
     int horsePower;
-    double price;
+    public double price;
 
     public Car(String producer, String model, Double engineCapacity, int horsePower, double price) {
         this.producer = producer;
