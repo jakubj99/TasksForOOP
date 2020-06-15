@@ -1,7 +1,7 @@
 package pl.wsb.human;
 
 import pl.wsb.animal.Animal;
-import pl.wsb.car.Car;
+import pl.wsb.devices.Car;
 
 
 
@@ -52,5 +52,17 @@ public class Human {
         }else{
             System.out.println("go to college and find new work or ask to the rise");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", weight=" + weight +
+                ", pet=" + pet +
+                ", vehicle=" + vehicle +
+                ", salary=" + salary +
+                '}';
     }
 }

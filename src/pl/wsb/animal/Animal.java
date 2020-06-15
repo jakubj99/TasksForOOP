@@ -41,4 +41,13 @@ public class Animal implements Feedable {
             weight += foodWeight;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "name='" + name + '\'' +
+                ", species='" + species + '\'' +
+                ", weight=" + weight +
+                '}';
+    }
 }

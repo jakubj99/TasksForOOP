@@ -1,4 +1,4 @@
-package pl.wsb.phone;
+package pl.wsb.devices;
 
 public class Phone {
 }

@@ -1,4 +1,4 @@
-package pl.wsb.car;
+package pl.wsb.devices;
 
 public class Car {
 
@@ -15,4 +15,17 @@ public class Car {
         this.price = price;
     }
 
+    public Car() {
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "producer='" + producer + '\'' +
+                ", model='" + model + '\'' +
+                ", engineCapacity=" + engineCapacity +
+                ", horsePower=" + horsePower +
+                ", price=" + price +
+                '}';
+    }
 }
