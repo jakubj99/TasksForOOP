@@ -3,6 +3,7 @@ package pl.wsb;
 import pl.wsb.animal.Animal;
 import pl.wsb.devices.Car;
 import pl.wsb.devices.CompareCars;
+import pl.wsb.devices.Phone;
 import pl.wsb.human.Human;
 
 public class Main {
@@ -25,8 +26,8 @@ public class Main {
         dog.walk();
         dog.walk();
 
-        Car gietek = new Car("Volkswagen", "Polo", 2.0, 200,100.0);
-        Car nizooon = new Car("Nissan", "Micra", 1.6, 75, 15.0);
+        Car gietek = new Car("Volkswagen", "Polo", 2.0, 200,100.0, 2019);
+        Car nizooon = new Car("Nissan", "Micra", 1.6, 75, 15.0, 2002);
 
         Human me = new Human("Jakub", "Jankowski", 55.0, dog, gietek);
 
@@ -35,6 +36,11 @@ public class Main {
         CompareCars compare = new CompareCars();
         compare.compareCars(gietek, gietek);
         compare.compareCars(gietek, nizooon);
+
+        gietek.turnOn();
+
+        Phone iPhone = new Phone("Apple", "8", 2017);
+        iPhone.turnOn();
 
 
     }
