@@ -26,10 +26,13 @@ public class Main {
         dog.walk();
         dog.walk();
 
+        Phone iPhone = new Phone("Apple", "8", 2017, 2000.00);
+        iPhone.turnOn();
+
         Car gietek = new Car("Volkswagen", "Polo", 2.0, 200,100.0, 2019);
         Car nizooon = new Car("Nissan", "Micra", 1.6, 75, 15.0, 2002);
 
-        Human me = new Human("Jakub", "Jankowski", 55.0, dog, gietek);
+        Human me = new Human("Jakub", "Jankowski", 55.0, dog, gietek, iPhone, 2000.00, 10000.00);
 
         System.out.println(dog);
 
@@ -39,8 +42,7 @@ public class Main {
 
         gietek.turnOn();
 
-        Phone iPhone = new Phone("Apple", "8", 2017);
-        iPhone.turnOn();
+
 
 
     }

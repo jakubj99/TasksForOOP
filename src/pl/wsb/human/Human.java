@@ -2,7 +2,7 @@ package pl.wsb.human;
 
 import pl.wsb.animal.Animal;
 import pl.wsb.devices.Car;
-
+import pl.wsb.devices.Phone;
 
 
 public class Human {
@@ -12,15 +12,44 @@ public class Human {
     double weight;
     Animal pet;
     private Car vehicle;
+    private Phone mobile;
     private double salary;
     private static String PASS = "mypass";
+    protected Double cash;
 
-    public Human(String firstName, String lastName, double weight, Animal pet, Car vehicle) {
+    public Human(String firstName, String lastName, double weight, Animal pet, Car vehicle, Phone mobile, double salary, Double cash) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.weight = weight;
         this.pet = pet;
         this.vehicle = vehicle;
+        this.mobile = mobile;
+        this.salary = salary;
+        this.cash = cash;
+    }
+
+    public Phone getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(Phone mobile) {
+        this.mobile = mobile;
+    }
+
+    public Double getCash() {
+        return cash;
+    }
+
+    public void setCash(Double cash) {
+        this.cash = cash;
+    }
+
+    public void plusCash(Double cash) {
+        this.cash += cash;
+    }
+
+    public void minusCash(Double cash) {
+        this.cash += cash;
     }
 
     public double getSalary(String pass) {
@@ -62,7 +91,9 @@ public class Human {
                 ", weight=" + weight +
                 ", pet=" + pet +
                 ", vehicle=" + vehicle +
+                ", mobile=" + mobile +
                 ", salary=" + salary +
+                ", cash=" + cash +
                 '}';
     }
 }

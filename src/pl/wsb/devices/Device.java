@@ -1,9 +1,12 @@
 package pl.wsb.devices;
 
-public abstract class Device {
+import pl.wsb.interfaces.Sellable;
+
+public abstract class Device implements Sellable {
 
     String producer, model;
     int yearOfProduction;
+    double price;
 
     void turnOn(){
     }
