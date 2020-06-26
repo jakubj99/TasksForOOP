@@ -96,4 +96,12 @@ public class Human {
                 ", cash=" + cash +
                 '}';
     }
+
+    public Animal getPet() {
+        return pet;
+    }
+
+    public void setPet(Animal pet) {
+        this.pet = pet;
+    }
 }

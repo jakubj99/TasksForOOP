@@ -1,18 +1,23 @@
 package pl.wsb.animal;
 
+import pl.wsb.human.Human;
 import pl.wsb.interfaces.Feedable;
+import pl.wsb.interfaces.Sellable;
 
-public class Animal implements Feedable {
+public class Animal implements Feedable, Sellable {
 
     public String name;
     public final String species;
     public Double weight;
+    private Double price;
 
-
-    public Animal(String species, Double weight) {
+    public Animal(String name, String species, Double weight, Double price) {
+        this.name = name;
         this.species = species;
         this.weight = weight;
+        this.price = price;
     }
+
 
     public void walk() {
 
@@ -35,10 +40,26 @@ public class Animal implements Feedable {
 
     @Override
     public void feed2(Double foodWeight) {
-        if (weight <= 0){
+        if (weight <= 0) {
             System.out.println("animal is dead, sorry...");
-        }else{
+        } else {
             weight += foodWeight;
+        }
+    }
+
+
+    @Override
+    public boolean sell(Human buyer, Human seller) throws Exception {
+        if (seller.getPet().price <= buyer.getCash()) {
+            buyer.minusCash(seller.getPet().price);
+            seller.plusCash(seller.getPet().price);
+            buyer.setPet(seller.getPet());
+            seller.setPet(null);
+            System.out.println("Your pet has new owner");
+            return true;
+        } else {
+            System.out.println("Not enough cash");
+            return false;
         }
     }
 
@@ -48,6 +69,7 @@ public class Animal implements Feedable {
                 "name='" + name + '\'' +
                 ", species='" + species + '\'' +
                 ", weight=" + weight +
+                ", price=" + price +
                 '}';
     }
 }

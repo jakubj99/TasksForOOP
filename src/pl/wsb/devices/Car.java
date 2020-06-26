@@ -1,5 +1,7 @@
 package pl.wsb.devices;
 
+import pl.wsb.human.Human;
+
 public class Car extends Device {
 
     Double engineCapacity;
@@ -31,5 +33,21 @@ public class Car extends Device {
     @Override
     public void turnOn() {
         System.out.println("wzium wzium prypypypypypy");
+    }
+
+
+    @Override
+    public boolean sell(Human buyer, Human seller) throws Exception {
+        if (seller.getVehicle().price <= buyer.getCash()) {
+            buyer.minusCash(seller.getVehicle().price);
+            seller.plusCash(seller.getVehicle().price);
+            buyer.setVehicle(seller.getVehicle());
+            seller.setVehicle(null);
+            System.out.println("Your" + buyer.getVehicle().producer + " " + buyer.getVehicle().model + " has new owner.");
+            return true;
+        } else {
+            System.out.println("Not enough cash");
+            return false;
+        }
     }
 }

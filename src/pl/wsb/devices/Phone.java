@@ -26,10 +26,6 @@ public class Phone extends Device {
         System.out.println("TURU TU TUU TUUUuuu, phone is switched on.");
     }
 
-    @Override
-    public void sell() throws Exception {
-
-    }
 
     @Override
     public boolean sell(Human buyer, Human seller) throws Exception {
@@ -38,7 +34,7 @@ public class Phone extends Device {
             seller.plusCash(seller.getMobile().price);
             buyer.setMobile(seller.getMobile());
             seller.setMobile(null);
-            System.out.println("Success");
+            System.out.println("Success, you have sold your phone to" + seller.toString());
             return true;
         } else {
             System.out.println("Not enough cash");
