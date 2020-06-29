@@ -1,4 +1,4 @@
-package pl.wsb.interfaces;
+package pl.wsb.creatures;
 
 public interface Feedable {
 

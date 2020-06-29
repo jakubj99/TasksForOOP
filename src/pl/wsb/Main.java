@@ -1,16 +1,16 @@
 package pl.wsb;
 
-import pl.wsb.animal.Animal;
+import pl.wsb.creatures.Animal;
 import pl.wsb.devices.Car;
 import pl.wsb.devices.CompareCars;
 import pl.wsb.devices.Phone;
-import pl.wsb.human.Human;
+import pl.wsb.creatures.Human;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Animal dog = new Animal("DOG", 5.00);
+        Animal dog = new Animal("DOG", "dog", 5.00, 1000.00);
         dog.name = "Borys";
 
 

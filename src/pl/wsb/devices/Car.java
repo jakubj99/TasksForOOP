@@ -1,6 +1,6 @@
 package pl.wsb.devices;
 
-import pl.wsb.human.Human;
+import pl.wsb.creatures.Human;
 
 public class Car extends Device {
 
@@ -37,7 +37,7 @@ public class Car extends Device {
 
 
     @Override
-    public boolean sell(Human buyer, Human seller) throws Exception {
+    public boolean sell(Human buyer, Human seller) throws Exception{
         if (seller.getVehicle().price <= buyer.getCash()) {
             buyer.minusCash(seller.getVehicle().price);
             seller.plusCash(seller.getVehicle().price);

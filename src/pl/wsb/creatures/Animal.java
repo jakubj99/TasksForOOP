@@ -1,10 +1,8 @@
-package pl.wsb.animal;
+package pl.wsb.creatures;
 
-import pl.wsb.human.Human;
-import pl.wsb.interfaces.Feedable;
 import pl.wsb.interfaces.Sellable;
 
-public class Animal implements Feedable, Sellable {
+public abstract class Animal implements Feedable, Sellable {
 
     public String name;
     public final String species;

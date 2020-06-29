@@ -1,6 +1,6 @@
-package pl.wsb.human;
+package pl.wsb.creatures;
 
-import pl.wsb.animal.Animal;
+import pl.wsb.creatures.Animal;
 import pl.wsb.devices.Car;
 import pl.wsb.devices.Phone;
 
