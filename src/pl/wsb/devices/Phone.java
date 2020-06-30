@@ -2,7 +2,13 @@ package pl.wsb.devices;
 
 import pl.wsb.creatures.Human;
 
+import java.net.URL;
+import java.util.List;
+
 public class Phone extends Device {
+
+
+
 
     public Phone(String producer, String model, int yearOfProduction, double price) {
         this.producer = producer;
@@ -42,5 +48,14 @@ public class Phone extends Device {
         }
     }
 
+    public void installAnApp(InstallAnApp name){
+        this.installAnApp(name);
+        System.out.println("App has been installed " + name);
+    }
+
+    public void installAnApp(String name, String version){
+        this.installAnApp(name, version);
+        System.out.println("App has been installed " + name + " in version " + version);
+    }
 
 }

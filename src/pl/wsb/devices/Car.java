@@ -17,6 +17,10 @@ public class Car extends Device {
         this.yearOfProduction = yearOfProduction;
     }
 
+    void refuel() {
+        
+    };
+
 
     @Override
     public String toString() {
