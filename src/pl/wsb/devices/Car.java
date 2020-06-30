@@ -18,7 +18,7 @@ public class Car extends Device {
     }
 
     void refuel() {
-        
+
     };
 
 

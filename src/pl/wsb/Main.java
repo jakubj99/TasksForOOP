@@ -1,6 +1,7 @@
 package pl.wsb;
 
 import pl.wsb.creatures.Animal;
+import pl.wsb.creatures.Pet;
 import pl.wsb.devices.Car;
 import pl.wsb.devices.CompareCars;
 import pl.wsb.devices.Phone;
@@ -10,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Animal dog = new Animal("DOG", "dog", 5.00, 1000.00);
+        Pet dog = new Pet("DOG", "dog", 5.00, 1000.00);
         dog.name = "Borys";
 
 
@@ -42,7 +43,9 @@ public class Main {
 
         gietek.turnOn();
 
-
+        me.setCarInGarage(gietek, 0);
+        me.hasACarInGarage(gietek);
+        System.out.println(me.getCarFromGarage(0));
 
 
     }

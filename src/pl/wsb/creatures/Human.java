@@ -12,6 +12,7 @@ public class Human {
     double weight;
     Animal pet;
     private Car vehicle;
+    private Car[] garage;
     private Phone mobile;
     private double salary;
     private static String PASS = "mypass";
@@ -23,6 +24,17 @@ public class Human {
         this.weight = weight;
         this.pet = pet;
         this.vehicle = vehicle;
+        this.mobile = mobile;
+        this.salary = salary;
+        this.cash = cash;
+    }
+
+    public Human(String firstName, String lastName, double weight, Animal pet, Car[] garage, Phone mobile, double salary, Double cash) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.weight = weight;
+        this.pet = pet;
+        this.garage = garage;
         this.mobile = mobile;
         this.salary = salary;
         this.cash = cash;
@@ -103,5 +115,32 @@ public class Human {
 
     public void setPet(Animal pet) {
         this.pet = pet;
+    }
+
+    public Double valueOfCars() {
+        Double value = 0.0;
+        for (Car car : garage) {
+            if (car != null) {
+                value += car.price;
+            }
+        }
+        return value;
+    }
+
+    public Car getCarFromGarage(Integer index) {
+        return this.garage[index];
+    }
+
+    public void setCarInGarage(Car car, Integer index) {
+        this.garage[index] = car;
+    }
+
+    public boolean hasACarInGarage(Car newCar) {
+        for(Car car : garage){
+            if(car == newCar){
+                return true;
+            }
+        }
+        return false;
     }
 }
