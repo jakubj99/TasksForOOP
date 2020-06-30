@@ -1,15 +1,18 @@
 package pl.wsb;
 
-import pl.wsb.creatures.Animal;
 import pl.wsb.creatures.Pet;
+import pl.wsb.database.Connector;
 import pl.wsb.devices.Car;
 import pl.wsb.devices.CompareCars;
 import pl.wsb.devices.Phone;
 import pl.wsb.creatures.Human;
 
+
+import java.sql.SQLException;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
 
         Pet dog = new Pet("DOG", "dog", 5.00, 1000.00);
         dog.name = "Borys";
@@ -47,6 +50,12 @@ public class Main {
         me.hasACarInGarage(gietek);
         System.out.println(me.getCarFromGarage(0));
 
+        String[] names = {"Jakub", "Kuba", "Santiago", "Jose"};
+        for (String name : names) {
+            System.out.println("Name: " + name);
+        }
+
+        Connector.connect();
 
     }
 }
