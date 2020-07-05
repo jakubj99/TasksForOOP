@@ -18,8 +18,24 @@ public class Car extends Device {
     }
 
     void refuel() {
-
+        System.out.println("Car has been refueled");
     };
+
+    public void sell(Human buyer, Human seller, Double price) throws Exception {
+        if(!seller.hasACarInGarage(this)){
+            throw new Exception("You dont have this car");
+        }
+        if(!buyer.hasAFreePlaceInGarage()){
+            throw new Exception("You don't have free space in garage");
+        }
+        if(buyer.getCash() < price){
+            throw new Exception("No money, no game");
+        }
+        buyer.removeCarFromGarage(this);
+        seller.setCarInGarage(this, 0);
+        buyer.minusCash(price);
+        seller.minusCash(price);
+    }
 
 
     @Override

@@ -40,6 +40,11 @@ public class Human {
         this.cash = cash;
     }
 
+    public Human() {
+        int DEFAULT_GARAGE = 5;
+        this.garage = new Car[DEFAULT_GARAGE];
+    }
+
     public Phone getMobile() {
         return mobile;
     }
@@ -143,4 +148,22 @@ public class Human {
         }
         return false;
     }
+
+    public boolean hasAFreePlaceInGarage() {
+        for (int i = 0; i < garage.length; i++) {
+            if (garage[i] == null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void removeCarFromGarage(Car car) {
+        for (int i = 0; i < garage.length; i++) {
+            if (garage[i] == car) {
+                garage[i] = null;
+            }
+        }
+    }
+
 }
